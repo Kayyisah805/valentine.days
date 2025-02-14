@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> 
+        <h1>💖 Happy Valentine’s Day! 💖</h1>
+    </header>
+
+    <div class="slideshow-container">
+        <img class="slides" src="4.jpg" alt="Foto 1">
+        <img class="slides" src="3.jpg" alt="Foto 2">
+        <img class="slides" src="5.jpg" alt="Foto 3">
+    </div>
+
+    <div class="album-buttons">
+        <button onclick="prevSlide()">⬅️</button>
+        <button onclick="nextSlide()">➡️</button>
+    </div>
+</main>
+
+    <main>
+        <p class="heart">❤️❤️❤️</p>
+        <button onclick="alert('Selamat Hari Valentine!❤️')">Klik Untuk Kejutan!</button>
+    </main>
+
+    <section class="album-foto">
+
+    </section>
+
+    <footer>
+        <p>&COPY; 2025 Valentine day</p>
+    </footer>
+
+    <script>
+         let slideIndex = 0;
+        const slides = document.querySelectorAll(".slides");
+
+        function showSlides(n) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === n ? "1" : "0";
+            });
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlides(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+            showSlides(slideIndex);
+        }
+
+        // Set default slide
+        showSlides(slideIndex);
+    </script>
+
+</body>
+</html>
